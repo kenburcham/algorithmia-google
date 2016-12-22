@@ -1,6 +1,6 @@
 # algorithmia-google
 
-Algorithmia.com calls itself a "marketplace for algorithms", but I rather see it as a "rocket engine powered, scalable, artificial intelligence algorithm cloud hosting platform!"
+Algorithmia.com calls itself a "marketplace for algorithms", but I rather see it as a "rocket powered, scalable, artificial intelligence cloud hosting platform!"
 
 There are thousands of algorithms currently hosted on Algorithmia. As a developer, you can think of these as a library of API endpoints that take some input and return some output, doing some magic in between. The magic is optimized for performance using a cloud of GPUs and as they say, it is a "deep learning architecture built for scale."
 
@@ -195,6 +195,8 @@ If everything works properly, your sheet will magically have a summary produced 
 ![Google Sheet function calling Algorithmia](images/google_sheet_algorithmia.jpg)
 
 ## Conclusion
-I'm excited to add Algorithmia capability to my Google Sheets. I also want to create my own algorithm as well. The way Algorithmia works is that each API call costs a certain number of credits. So if you create an algorithm that is popular, you can actually make a royalty off of every call! Of course, this also means that if you make more calls than your free credit limit, you'll have to pay some real money to keep using it. But if it is adding real value then I won't mind paying. I'm glad they give you some free credits to try it all out.
+I'm excited to add Algorithmia capability to my Google Sheets. I also want to create my own algorithms as well. Algorithmia's business model is to charge credits for each API call. There is a charge per second of CPU usage as well as, potentially, a royalty paid to the algorithm developer. This provides incentives for machine learning developers to host their work on Algorithmia. Not only can they scale out their service for their own use, but by sharing it with others, they can make royalties from every API call.
+
+As a consumer, you get a 10k credits for free each month, then API calls will cost you real money. But if it is adding value to your business or even personal workflow then it will be worth it. I'm just glad they give you some free credits to try it all out.
 
 Please let me know if I've made any mistakes and I'll be happy to correct them. Enjoy!
