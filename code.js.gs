@@ -28,9 +28,7 @@ function ALGO(a_algorithm, a_input, a_options) {
 function DIRECT_ALGO() {
   a_algorithm = "analyze-url-direct"; //the one we want to call below
   a_input = "https://www.theatlantic.com/health/archive/2016/12/no-doctor-should-work-30-straight-hours/510395/"; //test url
-
   algorithms[a_algorithm](a_input);
-
 }
 
 algorithms = {};
@@ -44,6 +42,10 @@ add_algorithm("analyze-url",
      function(a_inputURL){
 
        var input = [a_inputURL];
+
+       if(input == "")
+         throw new Error("AnalyzeURL requires an input URL");
+
        result = Algorithmia.client(api_key)
            .algo("algo://web/AnalyzeURL/0.2.17")
            .pipe(input);
@@ -58,7 +60,7 @@ add_algorithm("analyze-url",
 
  //this function will copy all of the result columns/values into adjacent cells to A1
  add_algorithm("analyze-url-direct",
-      function(a_inputURL, a_firstcell){
+      function(a_inputURL){
 
         var input = [a_inputURL];
         result = Algorithmia.client(api_key)

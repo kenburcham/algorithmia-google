@@ -194,6 +194,26 @@ When you move off of the cell, it will calculate the value causing it to fire yo
 If everything works properly, your sheet will magically have a summary produced by Algorithmia's AI.
 ![Google Sheet function calling Algorithmia](images/google_sheet_algorithmia.jpg)
 
+## One last thing
+Inevitably, you'll want to see more than just a one column/one value result. Google limits a custom function to only being able to write to the same cell where the function runs. That means, whichever cell you put the "=ALGO(...)" formula is the only one that the formula can write to. This is pretty limiting when what we'd like to do is maybe write all of the columns returned to the adjacent cells to the right.
+
+There are two ways to overcome this limitation. First, if you call a function directly from the script editor, it has permission to write to anywhere in the sheet. This, of course, is sort of a "programmer-only" solution. Secondly, Google Sheet "Add-ins" have full sheet write permission. The next logical step, then, would be to wrap up your functionality into a nifty Google Add-in.
+
+You can try out the first method (calling a function directly) if by adding three more functions to your code, DIRECT_ALGO, copyDataToFields and defining a new algorithm called "analyze-url-direct". Rather than paste all of that code here, just look for those functions on my github example here: https://github.com/kenburcham/algorithmia-google/blob/master/code.js.gs
+
+Once you have those functions added, you can see all of the columns displayed in your sheet from your Algorithmia API call by running the "DIRECT_ALGO" function from inside the script editor. It will start with the cell A1 and then write all of your columns to A2 and following... then it will write all of the data to the next row under the new heading labels.
+
+Click the triangle PLAY button in the script editor after selecting DIRECT_ALGO from the menu to try it:
+
+![Click play](images/direct_algo.jpg)
+
+And if everything works, your result will look something like this:
+
+![All columns](images/all_columns.jpg)
+
+Next, I will be working on creating an Algorithmia side-bar for trying out more of these ideas. I'll share them on my github when I'm done!
+
+
 ## Conclusion
 I'm excited to add Algorithmia capability to my Google Sheets. I also want to create my own algorithms as well. Algorithmia's business model is to charge credits for each API call. There is a charge per second of CPU usage as well as, potentially, a royalty paid to the algorithm developer. This provides incentives for machine learning developers to host their work on Algorithmia. Not only can they scale out their service for their own use, but by sharing it with others, they can make royalties from every API call.
 
